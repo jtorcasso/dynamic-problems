@@ -18,9 +18,7 @@ work = np.hstack((np.ones((1, T-R)), np.zeros((1, R))))
 # Random Income Component
 sigma = 0.5
 TransP, RI = randomwalkincome(I, sigma)
-
 RandInc = np.exp(RI)
-
 # Income variables
 
 inc_unc = np.ones((I, T))

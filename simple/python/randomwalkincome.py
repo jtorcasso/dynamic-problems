@@ -29,7 +29,7 @@ def randomwalkincome(Z, sigma):
 		for j in xrange(Z):
 			diff = abs(xxx[i] - xxx[j])
 			trans[i,j] = norm.cdf(diff+pe, 0, sigma) - \
-			             norm.cdf(diff-pe, 0, sigma)
+						 norm.cdf(diff-pe, 0, sigma)
 
 	# trans /= trans.sum(axis=0)
 	for i in xrange(Z):
