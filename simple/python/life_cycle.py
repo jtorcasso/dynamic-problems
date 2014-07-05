@@ -19,7 +19,7 @@ for t in xrange(T-2, -1, -1):
 			ev += TransP[ii, i]*(V[:,t+1][:,ii])
 		ev[np.isnan(ev)] = -np.inf
 		EV[:,t+1][:,i] = ev
-
+	# Budget constraint
 	vvv = np.tile(EV[:,t+1], (N,1,1))
 	c1 = np.tile(WealthGrid, (N,1,I))
 	c2 = np.tile(inc_unc[:,t], (N,N,1))

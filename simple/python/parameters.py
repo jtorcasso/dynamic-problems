@@ -2,7 +2,7 @@ import numpy as np
 from randomwalkincome import randomwalkincome
 
 # Model Parameters
-N = 600		# number of grid points of assets
+N = 20		# number of grid points of assets
 I = 10		# number of grid points of permanent income
 T = 45		# number of periods total
 R = 15		# number of periods in retirement
@@ -23,6 +23,7 @@ RandInc = np.exp(RI)
 
 inc_unc = np.ones((I, T))
 for i in xrange(I):
+	print
 	for t in xrange(T):
 		inc_unc[i,t] = max(0, inc[0,t]*RandInc[i])
 

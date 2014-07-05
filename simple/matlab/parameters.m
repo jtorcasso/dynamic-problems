@@ -2,7 +2,7 @@ global gamma psi
 
 %%%%SET UP THE PARAMETERS OF THE MODEL
 
-N = 600;                                    % # of grid points of assets
+N = 20;                                    % # of grid points of assets
 I=10;                                       % # of grid points of permanent income
 T = 45;                                     % # of periods in totakl
 R = 15;                                     % # of periods in retirement
@@ -18,9 +18,8 @@ Income=[Income,Income1];
 Works=[ones(1,T-R),zeros(1,R)];
 
 %%%%%% RANDOM INCOME COMPONENT
-sigma=0.05;
+sigma=0.5;
 [TransP,RI]=randomwalkincome(I,sigma);
-
 RandInc=exp(RI);
 
 %%%%%%INCOME VARIABLES
