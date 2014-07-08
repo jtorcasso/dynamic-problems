@@ -41,3 +41,9 @@ end;
 
 Policy(isinf(V))=NaN;
 
+V(1,1,:)
+V(2,1,:)
+V(3,1,:)
+Policy(1,1,:)
+Policy(2,1,:)
+Policy(3,1,:)
