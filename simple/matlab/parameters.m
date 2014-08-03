@@ -6,6 +6,7 @@ N = 1000;                                    % # of grid points of assets
 I=10;                                       % # of grid points of permanent income
 T = 45;                                     % # of periods in totakl
 R = 15;                                     % # of periods in retirement
+B=2;                                        % possible assets liquidation
 
 %%%%%%%%%%%% FIXED PARAMETERS %%%%%%%%
 
@@ -38,6 +39,18 @@ gamma = single(1.5);                    % RRA
 psi = 0.003;                              % utility cost of working
 
 %%%%%%%%% Wealth Grid 
-WealthGrid = single(linspace(-200000,2000000,N)');    % N equal spaced grid points between a and b'
+WealthGrid = single(linspace(-2000000,2000000,N)');    % N equal spaced grid points between a and b'
 %%%% find on what point on this grid the 0 is
 [~,a0]=min(abs((WealthGrid)));
+
+WealthGrid=WealthGrid(a0:end);
+N=numel(WealthGrid);
+
+%%%%%% asset value
+AssetValue=zeros(T,1);
+AV0=0;
+AV1=1000;
+AV2=-25;
+for t=1:T,
+    AssetValue(t)=max(AV0+AV1*t+AV2*t^2,0);
+end;
